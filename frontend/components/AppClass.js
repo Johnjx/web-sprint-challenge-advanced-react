@@ -16,7 +16,8 @@ export default class AppClass extends React.Component {
   initState = {
     totalMoves: 0,
     grid: this.grids.grid5,
-    message: ""
+    message: "",
+    emailInput: ""
   }
 
   state = this.initState;
@@ -256,6 +257,13 @@ handleRight = () => {
   }
 }
 
+handleChange = (evt) => {
+  const { value } = evt.target
+  this.setState({
+    emailInput: value
+  })
+}
+
   render() {
     const { className } = this.props
     return (
@@ -282,7 +290,7 @@ handleRight = () => {
           <button id="reset" onClick={() => this.handleReset()}>reset</button>
         </div>
         <form>
-          <input id="email" type="email" placeholder="type email"></input>
+          <input id="email" type="email" placeholder="type email" value={this.state.emailInput} onChange={this.handleChange}></input>
           <input id="submit" type="submit"></input>
         </form>
       </div>
