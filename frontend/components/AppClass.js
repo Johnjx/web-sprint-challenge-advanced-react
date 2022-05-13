@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 
 export default class AppClass extends React.Component {
   grids = {
@@ -12,6 +13,8 @@ export default class AppClass extends React.Component {
     grid8: ["","","","","","","","B",""],
     grid9: ["","","","","","","","","B"]
   }
+
+  URL = "http://localhost:9000/api/result"
 
   initState = {
     totalMoves: 0,
@@ -264,6 +267,33 @@ handleChange = (evt) => {
   })
 }
 
+postHelper = () => {
+  axios.post(this.URL, {
+      x: this.getCoordinates(this.state.grid)[0],
+      y: this.getCoordinates(this.state.grid)[1],
+      steps: this.state.totalMoves,
+      email: this.state.emailInput
+  })
+  .then(res => {
+    this.setState({
+      message: res.data.message
+    })
+  })
+  .catch(err => {
+    this.setState({
+      message: err.response.data.message
+    })
+  })
+}
+
+handleSubmit = (evt) => {
+  evt.preventDefault();
+  this.postHelper();
+  this.setState({
+    emailInput: ""
+  })
+}
+
   render() {
     const { className } = this.props
     return (
@@ -289,7 +319,7 @@ handleChange = (evt) => {
           <button id="down" onClick={() => this.handleDown()}>DOWN</button>
           <button id="reset" onClick={() => this.handleReset()}>reset</button>
         </div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input id="email" type="email" placeholder="type email" value={this.state.emailInput} onChange={this.handleChange}></input>
           <input id="submit" type="submit"></input>
         </form>
