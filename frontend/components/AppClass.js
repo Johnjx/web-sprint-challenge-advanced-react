@@ -302,7 +302,7 @@ handleSubmit = (evt) => {
           <h3 id="coordinates">
             {`Coordinate (${this.getCoordinates(this.state.grid)[0]} ,${this.getCoordinates(this.state.grid)[1]})`}
           </h3>
-          <h3 id="steps">You moved {this.state.totalMoves} times</h3>
+          <h3 id="steps">You moved {this.state.totalMoves} {this.state.totalMoves === 1? 'time': 'times'}</h3>
         </div>
         <div id="grid">
           {this.state.grid.map((item, idx) => (
