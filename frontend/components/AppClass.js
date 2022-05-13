@@ -15,7 +15,8 @@ export default class AppClass extends React.Component {
 
   initState = {
     totalMoves: 0,
-    grid: this.grids.grid5
+    grid: this.grids.grid5,
+    message: ""
   }
 
   state = this.initState;
@@ -83,32 +84,42 @@ handleUp = () => {
   if (this.state.grid === this.grids.grid5) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid2
+      grid: this.grids.grid2,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid4) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid1
+      grid: this.grids.grid1,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid6) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid3
+      grid: this.grids.grid3,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid8) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid5
+      grid: this.grids.grid5,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid7) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid4
+      grid: this.grids.grid4,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid9) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid6
+      grid: this.grids.grid6,
+      message: ""
+    })
+  } else {
+    this.setState({
+      message: "You can't go up"
     })
   }
 }
@@ -117,66 +128,86 @@ handleDown = () => {
   if (this.state.grid === this.grids.grid5) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid8
+      grid: this.grids.grid8,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid2) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid5
+      grid: this.grids.grid5,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid1) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid4
+      grid: this.grids.grid4,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid3) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid6
+      grid: this.grids.grid6,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid4) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid7
+      grid: this.grids.grid7,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid6) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid9
+      grid: this.grids.grid9,
+      message: ""
     })
-  } 
+  } else {
+    this.setState({
+      message: "You can't go down"
+    })
+  }
 }
 
 handleLeft = () => {
   if (this.state.grid === this.grids.grid5) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid4
+      grid: this.grids.grid4,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid2) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid1
+      grid: this.grids.grid1,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid8) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid7
+      grid: this.grids.grid7,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid3) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid2
+      grid: this.grids.grid2,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid6) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid5
+      grid: this.grids.grid5,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid9) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid8
+      grid: this.grids.grid8,
+      message: ""
+    })
+  } else {
+    this.setState({
+      message: "You can't go left"
     })
   }
 }
@@ -185,32 +216,42 @@ handleRight = () => {
   if (this.state.grid === this.grids.grid5) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid6
+      grid: this.grids.grid6,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid2) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid3
+      grid: this.grids.grid3,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid8) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid9
+      grid: this.grids.grid9,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid1) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid2
+      grid: this.grids.grid2,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid4) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid5
+      grid: this.grids.grid5,
+      message: ""
     })
   } else if (this.state.grid === this.grids.grid7) {
     this.setState({
       totalMoves: this.state.totalMoves + 1,
-      grid: this.grids.grid8
+      grid: this.grids.grid8,
+      message: ""
+    })
+  } else {
+    this.setState({
+      message: "You can't go right"
     })
   }
 }
@@ -231,7 +272,7 @@ handleRight = () => {
           ))}
         </div>
         <div className="info">
-          <h3 id="message"></h3>
+          <h3 id="message">{this.state.message}</h3>
         </div>
         <div id="keypad">
           <button id="left" onClick={() => this.handleLeft()}>LEFT</button>
